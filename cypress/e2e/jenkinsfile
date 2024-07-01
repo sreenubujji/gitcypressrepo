@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+
+    parameters
+    {
+        string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', decription:'pipeline creation practice')
+        choice(name: "Browser",choices: ["chrome","firefox","edge"],description: "Browser selection")
+    }
+    options
+    {
+        ansiColor('xterm')
+    }
+
+    stages{
+        stage('Building')
+        {
+            echo "Building the application"
+
+        }
+        stage('Testing'){
+            echo ""
+        }
+
+    }
+
+}
