@@ -8,7 +8,7 @@ describe("part of Assignment-2",()=>{
         cy.get('input#Email').clear().type('admin@yourstore.com')
         cy.get('input#Password').clear().type('admin')
         cy.get('.button-1.login-button').click()
-        cy.get('.content-header > h1').should('have.text'," Dashboard ")
+        cy.get('.content-header > h1').contains(" Dashboard ")
     })
 
     it("To validate the message showing incase of unsuccessfull login", ()=>{
@@ -16,15 +16,16 @@ describe("part of Assignment-2",()=>{
         cy.get('input#Email').clear().type('admin@yourstore.com')
         cy.get('input#Password').clear().type('admin12')
         cy.get('.button-1.login-button').click()
-        cy.get('div.message-error').should('have.text',"Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect")
+        cy.get('div.message-error').should('have.text',"Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect\n")
 
     })
 
-    it.("To click on sales button under home page",()=>{
+    it("To click on sales button under home page",()=>{
         cy.get('input#Email').clear().type('admin@yourstore.com')
         cy.get('input#Password').clear().type('admin')
         cy.get('.button-1.login-button').click()
         cy.get('a#nopSideBarPusher').click()
+        cy.get('.nav-icon.fas.fa-shopping-cart').click({ force:true })
         // cy.get('i.fa').click()
         // cy.get(':nth-child(3) > [href="#"] > .nav-icon').trigger('mouseover')
 

@@ -5,7 +5,7 @@ describe("First one to perform practice with git integration", ()=>{
     cy.visit('www.google.com')
     //cy.get(`DRc6kd.bdn4dc > button.M6CB1c.rr4y5c`).click()
    //  cy.get(`[placeholder='Search Google or type a URL']`).type("success")
-   cy.frameLoaded(`[aria-hidden="false"] > iframe button.M6CB1c.rr4y5c`).click()
+   cy.frameLoaded(`button.M6CB1c.rr4y5c`).click()
    }
 ) 
 })
