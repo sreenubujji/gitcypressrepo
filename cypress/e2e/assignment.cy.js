@@ -1,5 +1,3 @@
-// import { beforeEach } from "mocha"
-
 describe("part of Assignment-2",()=>{
     beforeEach(()=>{
         cy.visit('https://admin-demo.nopcommerce.com/login? ReturnUrl=%2Fadmin%2F')
@@ -22,7 +20,7 @@ describe("part of Assignment-2",()=>{
 
     })
 
-    it.only("To click on sales button under home page",()=>{
+    it.("To click on sales button under home page",()=>{
         cy.get('input#Email').clear().type('admin@yourstore.com')
         cy.get('input#Password').clear().type('admin')
         cy.get('.button-1.login-button').click()
@@ -31,8 +29,4 @@ describe("part of Assignment-2",()=>{
         // cy.get(':nth-child(3) > [href="#"] > .nav-icon').trigger('mouseover')
 
     })
-
-
-
-
 })
