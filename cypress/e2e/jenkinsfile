@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    CYPRESS_INSTALL_BINARY=13.7.0 npm install cypress@13.7.1
-
-
+    
     parameters
     {
         string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', description:'pipeline creation practice')
