@@ -3,7 +3,7 @@ pipeline{
 
     parameters
     {
-        string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', decription:'pipeline creation practice')
+        string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', description:'pipeline creation practice')
         choice(name: "Browser",choices: ["chrome","firefox","edge"],description: "Browser selection")
     }
     options
@@ -30,11 +30,14 @@ pipeline{
             }
             
         }
+        stage('Post Build action')
+        {
         post
         {
             always{
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
+        }
         }
 
     }
