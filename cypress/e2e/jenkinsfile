@@ -14,22 +14,19 @@ pipeline{
     stages{
         stage('Building')
         {
-            Steps{
+            steps{
                 echo "Building the application"
 
             }
-            
-
         }
         stage('Testing'){
-            Steps{
+            steps{
                 bat 'npm i'
                 bat 'npx cypress run --browser ${Browser} --spec ${SPEC}'}
             }
         stage('Deploying'){
-            Steps{
+            steps{
                 echo "Deploying the application"
-
             }
             
         }
@@ -39,8 +36,6 @@ pipeline{
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
-
-    
 
     }
 
