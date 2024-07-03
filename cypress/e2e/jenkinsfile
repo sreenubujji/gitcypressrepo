@@ -3,7 +3,7 @@ pipeline{
     
     parameters
     {
-        string( name: 'SPEC', defaultValue:'cypress/e2e/assignment.cy.js', description:'pipeline creation practice')
+        string( name: 'SPEC', defaultValue:'C:\pracitce\secondproj\cypress\e2e\assignment.cy.js', description:'pipeline creation practice')
         choice(name: 'BROWSER', choices: ["chrome","firefox","edge"], description: "Browser selection")
     }
     options
