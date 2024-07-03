@@ -30,19 +30,15 @@ pipeline{
             }
           
         }
-        // stage('Post Build action')
-        // {
-        //     steps{
-                post
+        stage('Post Build action')
         {
-            always{
+            steps{
+                
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            
             }
-        }
 
-        //     }
-
-        //   }
+          }
 
     }
 
