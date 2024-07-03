@@ -4,7 +4,7 @@ pipeline{
     parameters
     {
         string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', description:'pipeline creation practice')
-        choice(name: "Browser",choices: ["chrome","firefox","edge"],description: "Browser selection")
+        choice(name: 'BROWSER',choices: ["chrome","firefox","edge"],description: "Browser selection")
     }
     options
     {
@@ -22,7 +22,7 @@ pipeline{
         stage('Testing'){
             steps{
                 bat 'npm ci'
-                bat 'npx cypress run --browser ${Browser} --spec ${SPEC}'}
+                bat 'npx cypress run --browser ${BROWSER} --spec ${SPEC}'}
             }
         stage('Deploying'){
             steps{
