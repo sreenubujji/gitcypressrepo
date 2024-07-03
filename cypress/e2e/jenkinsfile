@@ -32,14 +32,6 @@ pipeline{
         }
         stage('Post Build action')
         {
-            // steps{
-            //     sh '''
-            //         # Grant read and write permissions for Jenkins user on source and destination directories
-            //         chmod -R u+rw  C:\ProgramData\Jenkins\.jenkins\workspace\Firstproject\cypress\reports
-            //         chmod -R u+rw  C:\ProgramData\Jenkins\.jenkins\jobs\Firstproject\builds\42\htmlreports
-            //         '''
-
-            // }
             steps{
                 
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
