@@ -4,7 +4,7 @@ pipeline{
     parameters
     {
         string( name: 'SPEC', defaultValue:'cypress/e2e/**/**', description:'pipeline creation practice')
-        choice(name: 'BROWSER',choices: ["chrome","firefox","edge"],description: "Browser selection")
+        choice(name: 'BROWSER', choices: ["chrome","firefox","edge"], description: "Browser selection")
     }
     options
     {
