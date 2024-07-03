@@ -30,7 +30,7 @@ describe("part of Assignment-2",()=>{
         cy.get('input#Email').clear().type(randomEmail)
         cy.get('input#Password').clear().type(randomPassword)
         cy.get('.button-1.login-button').click()
-        cy.get('div.message-error').should('have.text',"Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect\n")
+        cy.get('div.message-error').should('have.text',"Login was unsuccessful. Please correct the errors and try again.No customer account found\n")
 
     })
 
